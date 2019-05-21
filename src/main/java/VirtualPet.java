@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class VirtualPetShelter {
+public class VirtualPet {
 	
 	private Random generator = new Random();
 	
@@ -17,7 +17,7 @@ public class VirtualPetShelter {
 	
 	
 	
-	public VirtualPetShelter(String userPetName, String userPetId, int userPetHealth) {
+	public VirtualPet(String userPetName, String userPetId, int userPetHealth) {
 		userPetName = this.name;
 		userPetId = this.type;
 		userPetHealth = this.health;

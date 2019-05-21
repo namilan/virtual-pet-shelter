@@ -3,13 +3,13 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class VirtualPetShelterTest {
+public class VirtualPetTest {
 	
 	private String userPetName;
 	private String userPetId;
 	private int userPetHealth;
 
-	VirtualPetShelter underTest = new VirtualPetShelter (userPetName, userPetId, userPetHealth);
+	VirtualPet underTest = new VirtualPet (userPetName, userPetId, userPetHealth);
 	
 	@Test
 	public void doesPetNameGetterWork () {

@@ -1,11 +1,12 @@
+import java.util.Collection;
 import java.util.Random;
 
 public class VirtualPet {
 	
 	private Random generator = new Random();
 	
-	protected String name;
-	protected String type;
+	protected String name = "";
+	protected String type = "";
 	protected int health = 50;	
 	protected int hunger = 50;
 	protected int thirst = 50;
@@ -125,5 +126,10 @@ public class VirtualPet {
 		play = 50;
 		bored = 50;
 		clean = 50;
+	}
+
+	public Collection<VirtualPet> values() {
+		// TODO Auto-generated method stub
+		return values();
 	}
 }

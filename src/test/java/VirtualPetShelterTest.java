@@ -41,4 +41,16 @@ public class VirtualPetShelterTest {
 		
 	}
 	
+	@Test
+	public void shouldFeedPet() {
+		VirtualPet underTest = new VirtualPet ("", "", 50);
+		int isHungry = underTest.hunger = 50;
+		assertEquals(50, isHungry());
+	}
+
+	private Object isHungry() {
+		// TODO Auto-generated method stub
+		return 50;
+	}
+	
 }

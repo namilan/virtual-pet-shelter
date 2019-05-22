@@ -7,6 +7,7 @@ public class VirtualPetShelter {
 	
 	List<VirtualPet> virtualPets = new ArrayList<>();
 	
+	
 	public Collection<VirtualPet> virtualPets(){
 		return virtualPets;
 	}

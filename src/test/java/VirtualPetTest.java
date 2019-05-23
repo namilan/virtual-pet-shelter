@@ -8,8 +8,9 @@ public class VirtualPetTest {
 	private String userPetName;
 	private String userPetId;
 	private int userPetHealth;
+	private int userPetHunger;
 
-	VirtualPet underTest = new VirtualPet (userPetName, userPetId, userPetHealth);
+	VirtualPet underTest = new VirtualPet (userPetName, userPetId, userPetHealth, userPetHunger, 0, 0, 0);
 	
 	@Test
 	public void doesPetNameGetterWork () {

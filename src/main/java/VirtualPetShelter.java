@@ -1,65 +1,100 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-
 
 public class VirtualPetShelter {
 	
 	List<VirtualPet> virtualPets = new ArrayList<>();
 	
 	
-	public Collection<VirtualPet> virtualPets(){
+	
+	public List <VirtualPet> getVirtualPets(){
 		return virtualPets;
 	}
 	
-	public VirtualPet getUserPetName(int name) {
-		return virtualPets.get(name);	
-	}
-	
-	public void isAdopted(VirtualPet pet) {
-		virtualPets.remove(pet.name);
-	}
-	
-	public void isAdmit(VirtualPet pet) {
-		virtualPets.add(pet);
-	}
-	
-	public void isHungry(VirtualPet pet) {
-		for (VirtualPet currentPet: virtualPets()) {
-			currentPet.isHungry();
-		}
-	}
-		
-	public void isThirsty(VirtualPet pet) {
-		for (VirtualPet currentPet: virtualPets()) {
-			currentPet.isThirsty();
+	public void printAllPetNames() {
+		System.out.println("Here are the current pets in the shelter:");
+		for (VirtualPet currentPet : getVirtualPets()){
+				System.out.println(currentPet.getUserPetName());
 		}
 	}
 	
-	public void isNeedingPlay(VirtualPet pet) {
-		for (VirtualPet currentPet: virtualPets()) {
-			currentPet.isNeedingPlay();
+	public boolean isAdopted(VirtualPet pet) {
+		return this.virtualPets.remove(pet);
+	}
+	
+	public boolean isAdmit(VirtualPet pet) {
+		return this.virtualPets.add(pet);
+	}
+	
+	public boolean areThePetsHungry() {
+		for (VirtualPet currentPet : getVirtualPets()) {
+			if(currentPet.isHungry() == true) {
+				return true;
+			}
 		}
+		return false;
 		
 	}
-	
-	public void isClean(VirtualPet pet) {
-		for (VirtualPet currentPet: virtualPets()) {
-			currentPet.isClean();
-		}
-	}
-	
-	public void isBored(VirtualPet pet) {
-		for (VirtualPet currentPet: virtualPets ()) {
-			currentPet.isVeryBored();
-		}
-	}
-	
-	public void isPetClean(VirtualPet pet) {
-		for (VirtualPet currentPet: virtualPets()) {
-			currentPet.isClean();
-		}
-	}
 		
+	public boolean arePetsThirsty() {
+		for (VirtualPet currentPet : getVirtualPets()) {
+			if(currentPet.isThirsty() == true) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean isNeedingPlay() {
+		for (VirtualPet currentPet : getVirtualPets()) {
+			if(currentPet.isNeedingPlay() == true) {
+				return true;
+			}
+		}
+		return false;
+		
+	}
+	
+	public boolean isNeedingClean() {
+		for (VirtualPet currentPet : getVirtualPets()) {
+			if(currentPet.isClean() == true) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean isBored() {
+		for (VirtualPet currentPet : getVirtualPets ()) {
+			if(currentPet.isVeryBored() == true) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean isPetClean() {
+		for (VirtualPet currentPet : getVirtualPets()) {
+			if(currentPet.isClean() == true) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void makeAllPetsTick() {
+		for (VirtualPet currentPet : getVirtualPets()) {
+			currentPet.tick();
+		}
+	}
+	
+	public boolean areAlive() {
+		for (VirtualPet currentPet : getVirtualPets()) {
+			if(currentPet.isAlive() == true) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }

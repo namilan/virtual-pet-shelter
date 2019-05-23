@@ -15,13 +15,13 @@ public class VirtualPet {
 	protected int clean = 100;
 	protected int adopt = 1;
 	protected int admit = 1;
+
 	
 	
-	
-	public VirtualPet(String userPetName, String userPetId, int userPetHealth) {
-		userPetName = this.name;
-		userPetId = this.type;
-		userPetHealth = this.health;
+	public VirtualPet(String userPetName, String userPetId, int userPetHealth, int Hunger, int Thirst, int bored, int clean) {
+		this.name = userPetName;
+		this.type = userPetId;
+		this.health = userPetHealth;
 		
 	}
 	
@@ -101,6 +101,7 @@ public class VirtualPet {
 		return adopt <=1;
 	}
 	
+	
 	public boolean isAdmit() {
 		return admit >=1;
 	}
@@ -131,5 +132,14 @@ public class VirtualPet {
 	public Collection<VirtualPet> values() {
 		// TODO Auto-generated method stub
 		return values();
+	}
+	
+	boolean isAlive() {
+		if(hunger < 100 && bored < 100) {
+			return true;
+		} else {
+			return false;
+		}
+		
 	}
 }

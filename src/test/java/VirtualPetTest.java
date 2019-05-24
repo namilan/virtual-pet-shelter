@@ -58,8 +58,8 @@ public class VirtualPetTest {
 	
 	@Test
 	public void doesUserPetCleanGetterWork() {
-		underTest.clean = 100;
-		assertEquals(100, underTest.getUserPetClean());
+		underTest.clean = 25;
+		assertEquals(25, underTest.getUserPetClean());
 	}
 	
 	@Test

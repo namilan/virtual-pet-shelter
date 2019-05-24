@@ -11,6 +11,10 @@ public class VirtualPetShelter {
 		return virtualPets;
 	}
 	
+	public String getUserPetNames() {
+		return this.getUserPetNames();
+	}
+
 	public void printAllPetNames() {
 		System.out.println("Here are the current pets in the shelter:");
 		for (VirtualPet currentPet : getVirtualPets()){
@@ -18,13 +22,28 @@ public class VirtualPetShelter {
 		}
 	}
 	
-	public boolean isAdopted(VirtualPet pet) {
-		return this.virtualPets.remove(pet);
+	public void adoptPet(VirtualPet pet) {
+		this.virtualPets.remove(pet);
+	}
+	
+	public void adoptPetByName(String name) {
+		for(int x = 0; x < this.virtualPets.size(); x++) {
+			VirtualPet currentPet = new VirtualPet();
+			currentPet = this.virtualPets.get(x);
+			if(currentPet.getUserPetName().equalsIgnoreCase(name)) {
+				this.virtualPets.remove(x);
+			}
+		}
 	}
 	
 	public boolean isAdmit(VirtualPet pet) {
 		return this.virtualPets.add(pet);
 	}
+	
+	public void admitPetByName(String name, String type) {
+		VirtualPet newPet = new VirtualPet(name, type, 50, 43, 23, 67, 1);
+		this.virtualPets.add(newPet);
+		}
 	
 	public boolean areThePetsHungry() {
 		for (VirtualPet currentPet : getVirtualPets()) {
@@ -91,6 +110,15 @@ public class VirtualPetShelter {
 	public boolean areAlive() {
 		for (VirtualPet currentPet : getVirtualPets()) {
 			if(currentPet.isAlive() == true) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean isStarving() {
+		for (VirtualPet currentPet : getVirtualPets()){
+			if(currentPet.isStarving() == true) {
 				return true;
 			}
 		}

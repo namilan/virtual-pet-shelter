@@ -1,13 +1,17 @@
 import java.util.List;
 import java.util.Scanner;
 
+import javax.print.DocFlavor.INPUT_STREAM;
+
 public class VirtualPetShelterApp {
 
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in); 
+		
 		VirtualPetShelter ronnysPlayHouse = new VirtualPetShelter();
 		List<VirtualPet> petsInPlayhouse = ronnysPlayHouse.getVirtualPets();
+		 
 		
 		VirtualPet ronny = new VirtualPet("Ronny", "Raptor", 50, 50, 50, 50, 100);
 		petsInPlayhouse.add(ronny);
@@ -20,7 +24,20 @@ public class VirtualPetShelterApp {
 	do {
 		
 		System.out.println("Welcome to Ronny's Play House");
+		System.out.println("");
 		ronnysPlayHouse.printAllPetNames();
+		
+		
+		System.out.println("\n This is the status of your pets: ");
+		System.out.println("\nName\t|Hunger\t|Thirst\t|Boredom|Cage Condition");
+		System.out.println("--------|-------|-------|-------|-------");
+		
+		for (VirtualPet currentPet : ronnysPlayHouse.getVirtualPets()) {
+			System.out.println(currentPet.name + "\t|" + currentPet.hunger + "\t|" + currentPet.thirst + "\t|"
+					+ currentPet.bored + "\t|" + currentPet.clean);
+			
+		}
+		System.out.println("");
 		System.out.println("Here are some options for you!");
 		System.out.println("1)Would you like to feed the pets?");
 		System.out.println("2)Would you like to water all the pets?");
@@ -71,22 +88,24 @@ public class VirtualPetShelterApp {
 			
 		break;
 		case 5:
-			if(ronnysPlayHouse.isAdopted(null)) {
-				System.out.println("You have adopted a pet!");
-				ronnysPlayHouse.makeAllPetsTick();
-			} else {
-				System.out.println("");
-				ronnysPlayHouse.makeAllPetsTick();
-			}
+				System.out.println("Please choose a pet that you would like to adopt?");
+				ronnysPlayHouse.printAllPetNames();
+				System.out.println("Please enter their name here. ");
+				input.nextLine();
+				String adoptPet = input.nextLine();
+				ronnysPlayHouse.adoptPetByName(adoptPet);
+				System.out.println("You have adopted your pet. Please take great care of them!");
+				System.out.println("Remaining pets in the shelter as follows:");
+				ronnysPlayHouse.printAllPetNames();
 		break;
 		case 6:
-			if(ronnysPlayHouse.isAdmit(null)) {
-				System.out.println("You have admitted a pet!");
-				ronnysPlayHouse.makeAllPetsTick();
-			} else {
-				System.out.println("");
-				ronnysPlayHouse.makeAllPetsTick();
-			}
+				System.out.println("Please provide the name of the pet to admit today.");
+				input.nextLine();
+				String name = input.nextLine();
+				System.out.println("Please provide the type of pet you are admitting.");
+				String type = input.nextLine();
+				ronnysPlayHouse.admitPetByName(name, type);
+				System.out.println("We will take great care of your critter.");
 		break;
 		case 7:
 			System.out.println("Nobody likes a quitter...");
@@ -95,11 +114,18 @@ public class VirtualPetShelterApp {
 		default:
 			System.out.println("You did not enter a valid response. Try again.\n");
 			continue;
-		
 			
 		}
 	
 	} while (ronnysPlayHouse.areAlive());
 	
+	if (ronnysPlayHouse.isStarving()) {	
+		System.out.println("Pets starved and died.");
 	}
-}
+	System.out.println("Game Over.");
+	
+	input.close();
+	
+	} // end of app
+	
+} // end of class

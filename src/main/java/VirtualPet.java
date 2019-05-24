@@ -12,11 +12,13 @@ public class VirtualPet {
 	protected int thirst = 50;
 	protected int play = 50;
 	protected int bored = 50;
-	protected int clean = 100;
+	protected int clean = 25;
 	protected int adopt = 1;
 	protected int admit = 1;
 
-	
+	public VirtualPet() {
+		
+	}
 	
 	public VirtualPet(String userPetName, String userPetId, int userPetHealth, int Hunger, int Thirst, int bored, int clean) {
 		this.name = userPetName;
@@ -90,11 +92,11 @@ public class VirtualPet {
 	}
 	
 	public boolean isClean() {
-		return clean == 100;
+		return clean == 25;
 	}
 	
 	public boolean isNotClean() {
-		return clean <=100;
+		return clean <=25;
 	}
 	
 	public boolean isAdopted() {
@@ -106,8 +108,12 @@ public class VirtualPet {
 		return admit >=1;
 	}
 	
+	public boolean isStarving() {
+		return hunger <= 100;
+	} 
+	
 	public int generateRandom() {
-		return 10;
+		return generator.nextInt(1);
 	}
 	
 	//Tick Method
@@ -135,7 +141,7 @@ public class VirtualPet {
 	}
 	
 	boolean isAlive() {
-		if(hunger < 100 && bored < 100) {
+		if(hunger < 100 && bored < 100 && thirst < 100 && clean < 100) {
 			return true;
 		} else {
 			return false;

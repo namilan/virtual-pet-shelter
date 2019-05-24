@@ -24,7 +24,7 @@ public class VirtualPetShelterApp {
 	do {
 		
 		System.out.println("Welcome to Ronny's Play House");
-		System.out.println("");
+		System.out.println(" ");
 		ronnysPlayHouse.printAllPetNames();
 		
 		

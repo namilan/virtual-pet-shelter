@@ -1,0 +1,11 @@
+When I had started the testing method, I had thought that I was well on my way to finally start the APP. Boy, was I wrong. 
+
+5/20 : TDD was done. I used the whiteboard at home to write down exactly what I had needed for this project and how many Test classes I would need. 
+
+5/21 : Testing was done. Or so I thought. When going into writing the app, that's where things got tossed around. I used an ArrayList instead of a map, because I felt more comfortable with that. I used some of the moving parts I had in my Virtual Pet Project previously, like my Switch, and my Do / While. It worked, but then it stopped. When I opened up my project before submission, Eclipse was throwing errors left and right. I had to reset my program, considering it was giving me issues that were "bugs" according to Google. I really hope that never happens again. 
+
+5/22 : When I opened up my project before submission, Eclipse was throwing errors left and right. I had to reset my program, considering it was giving me issues that were "bugs" according to Google. I really hope that never happens again.
+
+5/23 : After Eclipse decided to work, I still had issues with the adopt / admit method. Plus my tick's were throwing everything out of wack. I had to go through and change some numbers around, to make sure that things were working. I finally figured out the adopt method and also the admit, and now they are working correctly. 
+
+I submitted as is. I will continue to work on it here and there to get the stretch goals done, just for my own personal gain and knowledge. 

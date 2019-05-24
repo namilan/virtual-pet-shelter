@@ -24,7 +24,7 @@ public class VirtualPetShelterApp {
 	do {
 		
 		System.out.println("Welcome to Ronny's Play House");
-		System.out.println(" ");
+		System.out.println("");
 		ronnysPlayHouse.printAllPetNames();
 		
 		
@@ -39,13 +39,13 @@ public class VirtualPetShelterApp {
 		}
 		System.out.println("");
 		System.out.println("Here are some options for you!");
-		System.out.println("1)Would you like to feed the pets?");
-		System.out.println("2)Would you like to water all the pets?");
-		System.out.println("3)Would you like to clean the cages?");
-		System.out.println("4)Which pet would you like to play with?");
-		System.out.println("5)Which pet would you like to adopt?");
-		System.out.println("6)Would you like to admit a pet?");
-		System.out.println("7)Quit. ");
+		System.out.println("1: Would you like to feed the pets?");
+		System.out.println("2: Would you like to water all the pets?");
+		System.out.println("3: Would you like to clean the cages?");
+		System.out.println("4: Which pet would you like to play with?");
+		System.out.println("5: Which pet would you like to adopt?");
+		System.out.println("6: Would you like to admit a pet?");
+		System.out.println("7: Quit. ");
 		
 		int userInput = input.nextInt();
 		
